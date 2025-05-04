@@ -106,7 +106,7 @@ export const workData = [
     {
       title: 'QA Projects',
       description: 'Manual & Automation Testing',
-      summary: 'Tested 8+ applications across defense and medical domains using manual testing, Selenium, LoadRunner, and JMeter.',
+      summary: 'Tested 9+ applications across defense and medical domains using manual testing, automation testing, Selenium, LoadRunner, and JMeter.',
       bgImage: '/work-2.png',
       type: 'qa',
     },

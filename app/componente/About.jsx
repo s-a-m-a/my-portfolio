@@ -31,14 +31,15 @@ const AboutMe = ({ isDarkMode }) => {
           </div>
 
           <p className="mb-4 text-black dark:text-white">
-            Hello, I'm Sama, a passionate Front-End Web Developer. I specialize in creating beautiful and user-friendly web interfaces that are both functional and visually engaging. My main focus is on developing responsive and accessible designs that provide smooth user experiences across various devices.
-          </p>
-          <p className="mb-4 text-black dark:text-white">
-            With a strong foundation in HTML, CSS, JavaScript, and frameworks like React, I thrive on turning complex problems into simple, intuitive solutions. I'm deeply committed to improving my skills, learning new technologies, and collaborating on innovative projects.
-          </p>
-          <p className="text-black dark:text-white">
-            Throughout my career, I’ve worked on several projects that involved front-end technologies, focusing on building responsive layouts, interactive features, and optimizing websites for performance. I enjoy working in a team and am always looking for new challenges to grow as a developer.
-          </p>
+  Hello, I'm Sama — a versatile Software QA Engineer and Front-End Developer with a passion for crafting reliable and engaging web experiences. I specialize in both manual and automation testing (Selenium + Java), and in building responsive, accessible UIs using React, Next.js, and Tailwind CSS.
+</p>
+<p className="mb-4 text-black dark:text-white">
+  My journey bridges the gap between quality assurance and front-end development, allowing me to create user interfaces that are not only visually appealing but also robust and thoroughly tested. I focus on turning complex challenges into seamless, intuitive solutions that work flawlessly across devices.
+</p>
+<p className="text-black dark:text-white">
+  I’ve contributed to impactful projects across defense, medical, and web domains—delivering quality, usability, and performance with every solution. I'm always eager to learn, grow, and collaborate on meaningful projects that make a difference.
+</p>
+
         </motion.div>
 
         {/* Education Section with education.map */}
@@ -92,11 +93,12 @@ const AboutMe = ({ isDarkMode }) => {
           </div>
 
           <p className="text-gray-600 dark:text-white">
-            <strong>Front-End Trainee</strong> – Bharat Electronics Limited (BEL), Bengaluru, India
-          </p>
-          <p className="text-gray-600 dark:text-white mt-2">
-            Worked as a Front-End Trainee for a year, contributing to projects involving defense, medical, and navy applications. My role involved collaborating with developers to build responsive web interfaces and optimizing the user experience for various applications.
-          </p>
+  <strong>Trainee Software Engineer</strong> – Bharat Electronics Limited (BEL), Bengaluru, India
+</p>
+<p className="text-gray-600 dark:text-white mt-2">
+  Worked as a Trainee Software Engineer for one year, contributing to 9 major projects across defense, medical, navy, and web domains. I designed and executed over 3000+ manual test cases with 99% requirement traceability, collaborated closely with developers to identify critical issues early, and improved QA efficiency by 20%. I also explored front-end technologies to better understand UI flows and user experience, expanding my technical skills beyond core responsibilities.
+</p>
+
         </motion.div>
       </div>
     </div>
