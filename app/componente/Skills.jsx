@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { toolsData } from '@/assets/assets'; // Make sure this points to an array of image paths
+import { skillsData } from '@/assets/assets'; // Make sure this points to an array of image paths
 
-const Tools = ({ isDarkMode }) => {
-  const toolsRef = useRef(null);
+const Skills = ({ isDarkMode }) => {
+  const skillsRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -12,29 +12,29 @@ const Tools = ({ isDarkMode }) => {
       { threshold: 0.3 }
     );
 
-    if (toolsRef.current) {
-      observer.observe(toolsRef.current);
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
     }
 
     return () => {
-      if (toolsRef.current) observer.unobserve(toolsRef.current);
+      if (skillsRef.current) observer.unobserve(skillsRef.current);
     };
   }, []);
 
   return (
     <div
-  id="tools"
-  ref={toolsRef}
+  id="skills"
+  ref={skillsRef}
   className={`text-center mt-10 transition-all duration-700 scroll-mt-40 ${
     isVisible ? 'animate-fade-in-up' : 'opacity-0'
   }`}
 >
 
       <h4 className="my-6 text-gray-700 font-Ovo text-xl dark:text-white">
-        TOOLS
+      skills
       </h4>
       <ul className="flex items-center justify-center gap-3 sm:gap-5 flex-wrap">
-      {toolsData.map((tool, index) => (
+      {skillsData.map((tool, index) => (
   <li
     key={index}
     className="relative group flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 transition-transform duration-300"
@@ -53,4 +53,4 @@ const Tools = ({ isDarkMode }) => {
   );
 };
 
-export default Tools;
+export default Skills;

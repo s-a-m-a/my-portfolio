@@ -7,7 +7,7 @@ import Work from "./componente/Work";
 import Contact from "./componente/Contact";
 import Footer from "./componente/Footer";
 import { useEffect, useState } from "react";
-import Tools from "./componente/Tools";
+import Skills from "./componente/Skills";
 
 
 
@@ -43,9 +43,9 @@ else{
     <>
     <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
     <Header isDarkMode={isDarkMode}/>
-    <About isDarkMode={isDarkMode}/>
+    <About isDarkMode={isDarkMode}></About>
 
-    <Tools isDarkMode={isDarkMode}/>
+    <Skills isDarkMode={isDarkMode}/>
     <Work isDarkMode={isDarkMode}/>
 
     <Contact isDarkMode={isDarkMode}/>

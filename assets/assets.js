@@ -17,10 +17,10 @@ import logo from './logo.png';
 import logo_dark from './logo_dark.png';
 import mail_icon from './mail_icon.png';
 import mail_icon_dark from './mail_icon_dark.png';
-import profile_pic from './profile_pic.jpg';
+import user_pic from './user_pic.png';
 import download_icon from './download-icon.png';
 import hand_icon from './hand-icon.png';
-import header_bg_color from './header-bg-color.png';
+
 import moon_icon from './moon_icon.png';
 import sun_icon from './sun_icon.png';
 import arrow_icon from './arrow-icon.png';
@@ -72,10 +72,10 @@ export const assets = {
     logo_dark,
     mail_icon,
     mail_icon_dark,
-    profile_pic,
+    user_pic,
     download_icon,
     hand_icon,
-    header_bg_color,
+   
     moon_icon,
     sun_icon,
     arrow_icon,
@@ -95,14 +95,6 @@ export const assets = {
 };
 
 export const workData = [
-    {
-      title: 'To-Do App',
-      description: 'Task management web app',
-      summary: 'This fully functional To-Do app features a clean and intuitive interface for efficient task management. Developed using React and Tailwind CSS, it offers seamless task organization with data persistence via localStorage, ensuring that tasks are retained across sessions. With a focus on both simplicity and efficiency, this app showcases my proficiency in React, front-end development, and UI/UX design. It reflects my commitment to creating practical, user-centered applications that provide real value.',
-      bgImage: '/work-1.png',
-      link: 'https://to-do-list-gules-pi-13.vercel.app/',
-      type: 'featured',
-    },
     {
       title: 'QA Projects',
       description: 'Manual & Automation Testing',
@@ -136,7 +128,7 @@ export const keyProjects = [
      { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
 ];
 
-export const toolsData = [
+export const skillsData = [
     { src: assets.html, name: 'HTML' },
     { src: assets.css, name: 'CSS' },
     { src: assets.js, name: 'JavaScript' },

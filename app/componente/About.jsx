@@ -1,108 +1,128 @@
 import React from 'react';
-import { aboutMe, assets, education, keyProjects, languages } from '@/assets/assets';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { aboutMe, education, languages } from '@/assets/assets';
 
-const AboutMe = ({ isDarkMode }) => {
+const cardVariants = {
+  hidden: { opacity: 0, y: 60, scale: 0.95 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { delay: i * 0.3, duration: 0.8, ease: 'easeOut' },
+  }),
+};
+
+const iconVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.4,
+      ease: 'easeOut',
+    },
+  }),
+};
+
+const About = ({ isDarkMode }) => {
+  const sections = [
+    {
+      title: 'About Me',
+      icons: aboutMe,
+      content: (
+        <div className="space-y-3 mt-4">
+          <p>Hello, I'm Sama — a versatile Software QA Engineer and Front-End Developer with a passion for crafting reliable and engaging web experiences. I specialize in both manual and automation testing (Selenium + Java), and in building responsive, accessible UIs using React, Next.js, and Tailwind CSS.</p>
+          <p>My journey bridges the gap between quality assurance and front-end development, allowing me to create user interfaces that are not only visually appealing but also robust and thoroughly tested.</p>
+          <p>I've contributed to impactful projects across defense, medical, and web domains—delivering quality, usability, and performance with every solution.</p>
+        </div>
+      ),
+    },
+    {
+      title: 'Education',
+      icons: education,
+      content: (
+        <div className="space-y-3 mt-4">
+          <p><strong>BE in Computer Science</strong> – Visvesvaraya Technological University (VTU), Karnataka, India</p>
+          <p>Graduated with a CGPA of 8.10. I developed a keen interest in web development and programming during my studies and worked on various projects that deepened my understanding of computer science concepts.</p>
+        </div>
+      ),
+    },
+    {
+      title: 'Previous Work Experience',
+      icons: languages,
+      content: (
+        <div className="space-y-3 mt-4">
+          <p><strong>Trainee Software Engineer</strong> – Bharat Electronics Limited (BEL), Bengaluru, India</p>
+          <p>Worked on 9 major projects across defense, medical, navy, and web domains. Designed and executed 3000+ manual test cases with 99% requirement traceability, collaborated with developers, and improved QA efficiency by 20%.</p>
+        </div>
+      ),
+    },
+  ];
+
   return (
-    <div className="w-full flex flex-col lg:flex-row items-start gap-20 my-20">
-      {/* Boxes for Description, Education, and Previous Work */}
-      <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div id="about" className="w-full flex justify-center px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32 my-20">
 
-        {/* About Me Box with keyProjects.map */}
-        <motion.div
-          className="p-6 border border-gray-400 rounded-xl bg-white dark:bg-gray-800 dark:border-white hover:scale-105 hover:translate-y-2 transition-all duration-300 shadow-lg hover:shadow-[0px_0px_20px_5px_rgba(255,0,255,0.5),0px_0px_20px_5px_rgba(0,255,255,0.5),0px_0px_20px_5px_rgba(0,0,255,0.5)]"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <h3 className="text-xl font-semibold mb-3">About Me</h3>
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-6 text-black dark:text-white w-full max-w-7xl">
+        {sections.map((section, index) => (
+          <motion.div
+            key={index}
+            custom={index}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{
+              scale: 1.03,
+              y: -10,
+              transition: { type: 'spring', stiffness: 200, damping: 12 },
+            }}
+            className="p-6 rounded-3xl border bg-white/20 dark:bg-black/20 backdrop-blur-xl 
+              shadow-xl transform-gpu transition-all duration-300 border-transparent 
+              hover:border-purple-400/50 hover:bg-gradient-to-tr from-purple-400/10 to-cyan-400/10 
+              overflow-hidden break-words"
+          >
+            <motion.h3
+              initial={{ clipPath: 'inset(0 100% 0 0)' }}
+              whileInView={{ clipPath: 'inset(0 0% 0 0)' }}
+              transition={{ duration: 0.7, ease: 'easeInOut' }}
+              className="text-2xl font-bold mb-4 text-black dark:text-white tracking-tight relative"
+            >
+              {section.title}
+              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-cyan-400 animate-pulse"></span>
+            </motion.h3>
 
-          {/* keyProjects Icons */}
-          <div className="flex gap-4 mb-4">
-            {aboutMe.map(({ icon, iconDark, title }, index) => (
-              <Image
-                key={index}
-                src={isDarkMode ? iconDark : icon}
-                alt={title}
-                className="w-7 h-7"
-              />
-            ))}
-          </div>
+            <div className="flex gap-3 mb-4 flex-wrap">
+              {section.icons.map(({ icon, iconDark, title }, i) => (
+                <motion.div
+                  key={i}
+                  custom={i}
+                  variants={iconVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="relative group"
+                >
+                  <Image
+                    src={isDarkMode ? iconDark : icon}
+                    alt={title}
+                    className="w-8 h-8 rounded shadow-sm 
+                      group-hover:scale-110 group-hover:rotate-6 
+                      transition-transform duration-300 animate-pulse"
+                  />
+                </motion.div>
+              ))}
+            </div>
 
-          <p className="mb-4 text-black dark:text-white">
-  Hello, I'm Sama — a versatile Software QA Engineer and Front-End Developer with a passion for crafting reliable and engaging web experiences. I specialize in both manual and automation testing (Selenium + Java), and in building responsive, accessible UIs using React, Next.js, and Tailwind CSS.
-</p>
-<p className="mb-4 text-black dark:text-white">
-  My journey bridges the gap between quality assurance and front-end development, allowing me to create user interfaces that are not only visually appealing but also robust and thoroughly tested. I focus on turning complex challenges into seamless, intuitive solutions that work flawlessly across devices.
-</p>
-<p className="text-black dark:text-white">
-  I’ve contributed to impactful projects across defense, medical, and web domains—delivering quality, usability, and performance with every solution. I'm always eager to learn, grow, and collaborate on meaningful projects that make a difference.
-</p>
-
-        </motion.div>
-
-        {/* Education Section with education.map */}
-        <motion.div
-          className="p-6 border border-gray-400 rounded-xl bg-white dark:bg-gray-800 dark:border-white hover:scale-105 hover:translate-y-2 transition-all duration-300 shadow-lg hover:shadow-[0px_0px_20px_5px_rgba(255,0,255,0.5),0px_0px_20px_5px_rgba(0,255,255,0.5),0px_0px_20px_5px_rgba(0,0,255,0.5)]"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <h3 className="text-xl font-semibold mb-3">Education</h3>
-
-          {/* education Icons */}
-          <div className="flex gap-4 mb-4">
-            {education.map(({ icon, iconDark, title }, index) => (
-              <Image
-                key={index}
-                src={isDarkMode ? iconDark : icon}
-                alt={title}
-                className="w-7 h-7"
-              />
-            ))}
-          </div>
-
-          <p className="text-gray-600 dark:text-white">
-            <strong>BE in Computer Science</strong> – Visvesvaraya Technological University (VTU), Karnataka, India
-          </p>
-          <p className="text-gray-600 dark:text-white mt-2">
-            Graduated with a CGPA of 8.10. I developed a keen interest in web development and programming during my studies and worked on various projects that deepened my understanding of computer science concepts.
-          </p>
-        </motion.div>
-
-        {/* Previous Work with languages.map */}
-        <motion.div
-          className="p-6 border border-gray-400 rounded-xl bg-white dark:bg-gray-800 dark:border-white hover:scale-105 hover:translate-y-2 transition-all duration-300 shadow-lg hover:shadow-[0px_0px_20px_5px_rgba(255,0,255,0.5),0px_0px_20px_5px_rgba(0,255,255,0.5),0px_0px_20px_5px_rgba(0,0,255,0.5)]"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <h3 className="text-xl font-semibold mb-3">Previous Work Experience</h3>
-
-          {/* languages Icons */}
-          <div className="flex gap-4 mb-4">
-            {languages.map(({ icon, iconDark, title }, index) => (
-              <Image
-                key={index}
-                src={isDarkMode ? iconDark : icon}
-                alt={title}
-                className="w-7 h-7"
-              />
-            ))}
-          </div>
-
-          <p className="text-gray-600 dark:text-white">
-  <strong>Trainee Software Engineer</strong> – Bharat Electronics Limited (BEL), Bengaluru, India
-</p>
-<p className="text-gray-600 dark:text-white mt-2">
-  Worked as a Trainee Software Engineer for one year, contributing to 9 major projects across defense, medical, navy, and web domains. I designed and executed over 3000+ manual test cases with 99% requirement traceability, collaborated closely with developers to identify critical issues early, and improved QA efficiency by 20%. I also explored front-end technologies to better understand UI flows and user experience, expanding my technical skills beyond core responsibilities.
-</p>
-
-        </motion.div>
+            <div className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+              {section.content}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default AboutMe;
+export default About;
