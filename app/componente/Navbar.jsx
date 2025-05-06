@@ -66,9 +66,6 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             <a className='font-Ovo' href="#work">Work</a>
           </li>
           <li className="transition-all duration-200 ease-in-out hover:text-blue-600 dark:hover:text-blue-400">
-            <a className='font-Ovo' href="#contact">Contact</a>
-          </li>
-          <li className="transition-all duration-200 ease-in-out hover:text-blue-600 dark:hover:text-blue-400">
             <button
               className="font-Ovo"
               onClick={() => {
@@ -79,6 +76,10 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               Skills
             </button>
           </li>
+          <li className="transition-all duration-200 ease-in-out hover:text-blue-600 dark:hover:text-blue-400">
+            <a className='font-Ovo' href="#contact">Contact</a>
+          </li>
+   
         </ul>
 
         {/* Dark Mode & Contact */}
@@ -107,7 +108,9 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           <li><a className='font-Ovo' onClick={closeMenu} href="#top">Home</a></li>
           <li><a className='font-Ovo' onClick={closeMenu} href="#about">About me</a></li>
           <li><a className='font-Ovo' onClick={closeMenu} href="#work">Work</a></li>
+          <li><a className='font-Ovo' onClick={closeMenu} href="#skills">Skills</a></li>
           <li><a className='font-Ovo' onClick={closeMenu} href="#contact">Contact</a></li>
+          
         </ul>
       </nav>
     </>
