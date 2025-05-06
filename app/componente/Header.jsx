@@ -16,7 +16,7 @@ const Header = () => {
         <Image 
           src={assets.user_pic} 
           alt= 'user image' 
-          className='rounded-full w-40 md:w-52'  // Removed the border classes
+          className='rounded-full w-30 md:w-20'  // Removed the border classes
         />
       </motion.div>
 

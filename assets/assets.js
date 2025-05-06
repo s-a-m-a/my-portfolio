@@ -44,6 +44,13 @@ import next_js from './next-js.png';
 import react from './react.png';
 import tailwind from './tailwind.jpg';
 import firebase from './firebase.png';
+import Manual_Testing from './Manual_testing.png';
+import Automation_Testing from './Automation_testing.png';
+import selenium from './selenium.png';
+
+
+
+
 
 
 export const assets = {
@@ -75,7 +82,10 @@ export const assets = {
     user_pic,
     download_icon,
     hand_icon,
-   
+    Manual_Testing,
+    Automation_Testing,
+    selenium,
+
     moon_icon,
     sun_icon,
     arrow_icon,
@@ -136,4 +146,8 @@ export const skillsData = [
     { src: assets.react, name: 'React' },
     { src: assets.tailwind, name: 'Tailwind' },
     { src: assets.firebase, name: 'Firebase' },
+    { src: assets.figma, name: 'Figma' },
+    { src: assets.Manual_Testing, name: 'Manual Testing' },
+    { src: assets.Automation_Testing, name: 'Automation' },
+    { src: assets.selenium, name: 'Selenium' }
   ];

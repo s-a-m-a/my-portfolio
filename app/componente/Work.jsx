@@ -22,9 +22,9 @@ const Work = ({ isDarkMode }) => {
       link: "https://to-do-list-gules-pi-13.vercel.app/",
     },
     {
-      title: "Online Jewellry store",
-      description: "An online jewelry store offering a wide variety of elegant and customizable jewelry pieces. The platform features an intuitive interface for browsing collections, selecting items, and making purchases with ease.",
-      summary: "Explore a curated selection of fine jewelry with easy navigation and secure purchasing options. The site offers a smooth shopping experience, allowing users to browse, filter, and order their favorite pieces effortlessly.",
+      title: "Event Scheduling Website",
+      description: "Built a responsive event scheduling website that lets users create and manage events.",
+      summary: "Implemented interactive calendar views, local storage persistence, and user-friendly UI.",
       link: "",
     },
   ]
@@ -51,10 +51,10 @@ const Work = ({ isDarkMode }) => {
 
   return (
     <div id="work" className='w-full px-[12%] py-10 scroll-mt-20 text-black dark:text-white'>
-      <h4 className='text-center mb-2 text-lg font-Ovo'>My portfolio</h4>
+      
       <h2 className='text-center text-5xl font-Ovo'>My Latest Work</h2>
       <p className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>
-        Here's a quick overview of my QA and frontend projects, including a featured To-Do app with live link access.
+        Here's a quick overview of my QA and frontend projects, including live link access.
       </p>
 
       <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 my-10'>
