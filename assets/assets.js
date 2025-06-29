@@ -107,15 +107,11 @@ export const assets = {
 export const workData = [
     {
       title: 'QA Projects',
-      description: 'Manual & Automation Testing',
-      summary: 'Tested 9+ applications across defense and medical domains using manual testing, automation testing, Selenium, LoadRunner, and JMeter.',
       bgImage: '/work-2.png',
       type: 'qa',
     },
     {
       title: 'Frontend Showcase',
-      description: 'Web Design Projects',
-      summary: 'Responsive frontend UIs using HTML, Tailwind, and React. Includes personal site, photography UI, and a geo app.',
       bgImage: '/work-3.png',
       type: 'frontend',
     },

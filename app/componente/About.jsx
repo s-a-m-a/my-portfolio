@@ -50,15 +50,41 @@ const About = ({ isDarkMode }) => {
       ),
     },
     {
-      title: 'Previous Work Experience',
-      icons: languages,
-      content: (
-        <div className="space-y-3 mt-4">
-          <p><strong>Trainee Software Engineer</strong> – Bharat Electronics Limited (BEL), Bengaluru, India</p>
-          <p>Worked on 9 major projects across defense, medical, navy, and web domains. Designed and executed 3000+ manual test cases with 99% requirement traceability, collaborated with developers, and improved QA efficiency by 20%.</p>
-        </div>
-      ),
-    },
+  title: 'Previous Work Experience',
+  icons: languages,
+  content: (
+    <div className="space-y-5 mt-4 text-[15px] font-Ovo">
+      
+      {/* Trainee Engineer */}
+      <div>
+        <p className="text-lg font-semibold text-gray-900 dark:text-white">
+          Trainee Engineer – 1 (Software QA)
+        </p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+          Bharat Electronics Limited (BEL), Bengaluru, India &nbsp; | &nbsp; June 2025 – Present
+        </p>
+        <p>
+          Worked on critical defense systems involving both web and embedded modules. Designed and executed functional, regression, and exploratory test cases; automated scenarios using Selenium and TestNG (boosting test efficiency by 30%). Collaborated with developers via JIRA to reduce issue resolution time by 25%. Conducted system-level performance testing using JMeter with a primary focus on defense-grade applications.
+        </p>
+      </div>
+
+      {/* Graduate Apprentice */}
+      <div>
+        <p className="text-lg font-semibold text-gray-900 dark:text-white">
+          Graduate Apprentice Trainee (Software QA)
+        </p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+          Bharat Electronics Limited (BEL), Bengaluru, India &nbsp; | &nbsp; Feb 2024 – Feb 2025
+        </p>
+        <p>
+          Tested applications across defense, navy, and medical domains. Automated UI flows using Selenium and TestNG; performed functional and integration testing; logged and tracked defects in JIRA. Carried out performance testing using JMeter and LoadRunner. Executed 3500+ test cases with 99% traceability and achieved a 95% bug closure rate.
+        </p>
+      </div>
+
+    </div>
+  ),
+}
+
   ];
 
   return (
